@@ -1,0 +1,26 @@
+@import "@styles/index.scss";
+
+.label {
+  margin-bottom: 10px;
+
+  @include burgerLink();
+}
+
+.previewWrapper {
+  width: 130px;
+  height: 130px;
+  border: 2px solid $C_PRICE;
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+  @include flex();
+}
+
+.previewImage {
+  width: 100px;
+  height: 100px;
+}
+
+.buttonGroup {
+  @include flex($justify: start, $gap: 15px);
+}

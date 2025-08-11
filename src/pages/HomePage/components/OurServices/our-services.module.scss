@@ -1,0 +1,140 @@
+@import "@styles/index.scss";
+
+.ourServices {
+  position: relative;
+  background-color: $C_BG;
+  height: 100%;
+  width: 100%;
+  padding-top: 135px;
+  padding-bottom: 100px;
+
+  & .waveContainer {
+    @include waveContainer($top: 0);
+
+    & .wave {
+      @include wave();
+    }
+  }
+
+  & .waveContainerBottom {
+    @include waveContainer($bottom: 0);
+
+    & .waveBottom {
+      @include wave();
+      transform: rotate(180deg);
+    }
+  }
+
+  .blockTitleContainer {
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+    overflow: visible;
+    padding: 15px;
+    margin-bottom: 50px;
+
+    @include LAPTOP {
+      margin-bottom: 20px;
+    }
+  }
+
+  .titleDescription {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+    @include subtitle();
+    margin-bottom: 50px;
+
+    @include LAPTOP {
+      margin-bottom: 20px;
+    }
+  }
+
+  .toggleButtonContainer {
+    @include flex($gap: 18px);
+    margin-bottom: 80px;
+
+    @include LAPTOP {
+      margin-bottom: 40px;
+    }
+  }
+
+  .ourServicesVector {
+    top: -26px;
+    transform: translateX(-64%);
+  }
+
+  .planContainer {
+    margin-bottom: 64px;
+
+    @include LAPTOP {
+      margin-bottom: 44px;
+    }
+  }
+
+  .plansToggle {
+    background-color: $C_BLUE;
+    height: 54px;
+
+    @include LAPTOP {
+      height: 44px;
+    }
+
+    @include TABLET {
+      height: 40px;
+    }
+
+    & button {
+      @include LAPTOP {
+        padding-inline: 12px;
+      }
+    }
+
+    & div {
+      background-color: $C_MODAL;
+    }
+
+    & span {
+      @include smallTabText();
+    }
+  }
+
+  .planContent {
+    @include flex($direction: column);
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  .planTitle {
+
+    @include titleBlock();
+    margin-bottom: 14px;
+  }
+
+  .price {
+    @include price();
+  }
+
+  .planDescription {
+    max-width: 600px;
+    @include subtitle();
+    margin-bottom: 64px;
+
+    @include LAPTOP {
+      margin-bottom: 36px;
+    }
+  }
+
+  .euro {
+    margin-left: 3px;
+    width: 28px;
+    height: 28px;
+
+    @include TABLET {
+      width: 23px;
+      height: 23px;
+    }
+  }
+}

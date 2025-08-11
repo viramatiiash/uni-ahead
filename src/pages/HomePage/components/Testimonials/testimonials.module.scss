@@ -1,0 +1,38 @@
+@import "@styles/index.scss";
+
+.testimonials {
+  background-color: $C_BLUE;
+  height: 100%;
+  width: 100%;
+  padding-block: 100px;
+
+  @include TABLET {
+    padding-block: 50px;
+  }
+}
+
+.blockTitleContainer {
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+  overflow: visible;
+  padding: 15px;
+  margin-bottom: 50px;
+
+  @include LAPTOP {
+    margin-bottom: 20px;
+  }
+}
+
+.subtitle {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 635px;
+  @include subtitle();
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.testimonialsVector {
+  top: -8px;
+}

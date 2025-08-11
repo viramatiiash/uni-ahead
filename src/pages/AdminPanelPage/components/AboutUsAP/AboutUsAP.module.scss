@@ -1,0 +1,12 @@
+@import "@styles/index.scss";
+
+.form {
+  width: 100%;
+  max-width: 500px;
+  @include flex($direction: column, $align: start, $gap: 40px);
+
+  .label {
+    @include burgerLink;
+    margin-bottom: 10px;
+  }
+}

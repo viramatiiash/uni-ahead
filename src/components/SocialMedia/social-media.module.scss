@@ -1,0 +1,24 @@
+@import '@styles/index.scss';
+
+.socialMedia {
+  @include flex($gap: 9px);
+
+  & .iconContainer {
+    @include flex();
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: $C_BUTTON;
+    transition: $TRANSITION;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: $C_PRICE;
+    }
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

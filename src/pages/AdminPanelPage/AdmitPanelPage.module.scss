@@ -1,0 +1,46 @@
+@import "@styles/index.scss";
+
+.adminPanelPage {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  padding-block: 100px;
+  padding-left: 355px;
+  padding-right: 45px;
+  background-color: $C_BG;
+
+  @include custom(1200px) {
+    padding-left: 300px;
+  }
+
+  @include LAPTOP {
+    @include flex($direction: column, $justify: start);
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  @include TABLET {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  @include MOBILE_MEDIUM {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .pageBurger {
+    position: fixed;
+    display: none;
+    left: 20px;
+    top: 80px;
+    z-index: 1001;
+
+    @include LAPTOP {
+      display: block;
+    }
+  }
+}

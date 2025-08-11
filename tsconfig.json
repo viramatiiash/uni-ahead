@@ -1,0 +1,31 @@
+{
+  "include": ["src", "src/vite-env.d.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["vite/client", "react", "react-dom"],
+    "lib": ["ES2015", "DOM"],
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@store/*": ["src/store/*"],
+      "@/*": ["src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@routes/*": ["src/routes/*"],
+      "@styles/*": ["src/styles/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@components/*": ["src/components/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@constants/*": ["src/constants/*"]
+    }
+  }
+}

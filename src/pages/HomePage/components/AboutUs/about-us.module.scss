@@ -1,0 +1,206 @@
+@import "@styles/index.scss";
+
+.aboutUs {
+  background-color: $C_PRIMARY;
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 150px;
+
+  @include LAPTOP {
+    padding-top: 50px;
+    padding-bottom: 110px;
+  }
+}
+
+.blockTitleContainer {
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+  overflow: visible;
+  padding: 15px;
+  margin-bottom: 120px;
+
+  @include LAPTOP {
+    margin-bottom: 30px;
+  }
+}
+
+.contentContainer {
+  @include flex($gap: 50px);
+
+  @include LAPTOP {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.textContainer {
+  width: 40%;
+  position: relative;
+  z-index: 2;
+
+  @include LAPTOP {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 50px;
+  }
+
+  @include MOBILE_MEDIUM {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  & .textTitle {
+    @include titleBlock;
+    margin-bottom: 34px;
+
+    @include LAPTOP {
+      margin-bottom: 20px;
+    }
+  }
+
+  & .text {
+    @include text;
+    margin-bottom: 40px;
+    line-height: $LH_TEXT;
+
+    @include LAPTOP {
+      margin-bottom: 12px;
+    }
+  }
+
+  & .text:nth-of-type(2) {
+    margin-bottom: 40px;
+
+    @include LAPTOP {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.ctaContainer {
+  @include flex($justify: start, $gap: 15px);
+
+  & .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  & .ctaText {
+    @include videoText;
+  }
+
+  & .ctaVectorContainer {
+    position: relative;
+    overflow: visible;
+  }
+
+  & .arrowVector {
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(40px, -40px);
+    width: 322px;
+
+    @include custom(1440px) {
+      width: 230px;
+    }
+
+    @include DESKTOP {
+      width: 250px;
+      top: 10px;
+    }
+
+    @include custom(1200px) {
+      width: 180px;
+    }
+
+    @include LAPTOP {
+      display: none;
+    }
+  }
+
+  .arrowVector_2 {
+    display: none;
+
+    @include LAPTOP {
+      display: block;
+      top: 22px;
+      height: 57px;
+      width: 15px;
+    }
+  }
+}
+
+.videoContainer {
+  position: relative;
+  width: 650px;
+  height: 400px;
+
+  @include DESKTOP {
+    width: 470px;
+    height: 300px;
+  }
+
+  @include LAPTOP {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+
+  }
+
+  @include TABLET {
+    max-width: 600px;
+    height: 300px;
+  }
+
+  @include MOBILE_MEDIUM {
+    height: 250px;
+  }
+
+  @include MOBILE {
+    height: 200px;
+  }
+
+  & .cloudBG {
+    width: 784px;
+    height: 600px;
+    position: absolute;
+    top: -90px;
+    bottom: 0;
+    left: -50px;
+    right: 0;
+
+    @include WIDESCREEN {
+      width: 750px;
+    }
+
+    @include DESKTOP {
+      width: 550px;
+      top: -140px;
+    }
+
+    @include LAPTOP {
+      width: 770px;
+      top: -90px;
+      left: -30px;
+    }
+
+    @include TABLET {
+      width: 600px;
+      top: -130px;
+      left: -50px;
+    }
+
+    @include MOBILE_MEDIUM {
+      width: 500px;
+      top: -150px;
+    }
+
+    @include MOBILE {
+      width: 412px;
+      top: -170px;
+    }
+  }
+}

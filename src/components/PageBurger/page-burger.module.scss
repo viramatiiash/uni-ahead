@@ -1,0 +1,49 @@
+@import "@styles/index.scss";
+
+.modalWrapper {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &.closed {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+}
+
+.pageBurgerModalContainer {
+  position: relative;
+  border-radius: 50%;
+  transition: $TRANSITION;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 99;
+  padding: 10px;
+  box-shadow: $BS_BURGER;
+  background-color: $C_BG;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $C_MENU;
+  }
+
+  &:active,
+  &.active {
+    transition: none;
+    background-color: $C_BUTTON;
+  }
+
+  .icon {
+    stroke: $C_TEXT_SECONDARY;
+  }
+}

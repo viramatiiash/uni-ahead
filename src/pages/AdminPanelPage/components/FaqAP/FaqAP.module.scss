@@ -1,0 +1,155 @@
+@import "@styles/index.scss";
+
+.faq {
+  width: 100%;
+
+  .titleContainer {
+    @include flex($justify: start, $gap: 40px, $align: center);
+    @include custom(1200px) {
+      gap: 30px;
+    }
+  }
+
+  .btn {
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .btnIcon {
+    transform: scaleX(-1);
+    width: 30px;
+    height: 30px;
+    color: $C_BG;
+
+    @include MOBILE_MEDIUM {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .crossIcon {
+    width: 22px;
+    height: 22px;
+
+    @include MOBILE_MEDIUM {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .btnAction {
+    padding-inline: 12px;
+
+    @include MOBILE_MEDIUM {
+      padding-inline: 8px;
+      height: 34px;
+    }
+  }
+
+  .number {
+    display: inline-block;
+    position: relative;
+    @include burgerLink();
+    transition: $TRANSITION;
+    min-width: 18px;
+
+    @include TABLET {
+      font-size: 16px;
+    }
+
+    &.editMode {
+      font-weight: 900;
+    }
+
+    & .navigationVector {
+      width: 30px;
+      height: 12px;
+      top: auto;
+      bottom: -4px;
+      left: -10px;
+      transform: translateX(0);
+
+      @include MOBILE_MEDIUM {
+        width: 24px;
+      }
+    }
+  }
+
+  .faqItemWrapper {
+    margin-block: 50px;
+  }
+
+  .faqItemTitle {
+    @include burgerLink();
+
+    @include DESKTOP {
+      font-size: 18px;
+    }
+
+    @include TABLET {
+      font-size: 16px;
+    }
+  }
+
+  .faqItem {
+    @include flex($justify: space-between);
+    gap: 20px;
+    padding-block: 15px;
+
+    @include TABLET {
+      padding-block: 12px;
+      gap: 14px;
+    }
+  }
+
+  .faqItemTitleContainer {
+    @include flex($gap: 20px);
+
+    @include TABLET {
+      gap: 8px;
+    }
+  }
+
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+    transition: $TRANSITION;
+  }
+
+  .arrowIconOpen {
+    transform: rotate(90deg);
+  }
+
+  .buttons {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1000;
+    @include flex($gap: 15px);
+
+    @include DESKTOP {
+      gap: 10px;
+    }
+
+    @include TABLET {
+      gap: 5px;
+    }
+  }
+
+  .dragIcon {
+    cursor: grab;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}

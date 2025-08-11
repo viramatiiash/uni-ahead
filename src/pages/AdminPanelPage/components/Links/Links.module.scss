@@ -1,0 +1,17 @@
+@import "@styles/index.scss";
+
+.form {
+  width: 100%;
+
+  @include flex($direction: column, $gap: 40px, $align: start);
+
+  .block {
+    width: 100%;
+    max-width: 500px;
+    @include flex($direction: column, $gap: 20px, $align: start);
+  }
+
+  .titleContainer {
+    @include flex($justify: start, $gap: 40px, $align: center);
+  }
+}

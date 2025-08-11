@@ -1,0 +1,125 @@
+@import "@styles/index.scss";
+@import "./banner-animation.scss";
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 740px;
+  overflow: hidden;
+
+  @include DESKTOP {
+    height: 640px;
+  }
+
+  @include LAPTOP {
+    height: 630px;
+  }
+}
+
+.bannerBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, transform;
+}
+
+.embla {
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.embla__container {
+  display: flex;
+  height: 100%;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.polygonContainer {
+  background-image: url("@images/forms/banner-polygon.webp");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 750px;
+  height: 740px;
+  animation: slideIn 1s ease-out forwards;
+  @include flex($direction: column, $align: start);
+
+  @include DESKTOP {
+    width: 650px;
+    height: 640px;
+  }
+
+  @include LAPTOP {
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    background-color: rgba($C_SECONDARY, 0.6);
+    animation: none;
+    width: 100%;
+    height: 630px;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.textContainer {
+  @include flex($direction: column, $align: start);
+  max-width: 506px;
+
+  @include DESKTOP {
+    max-width: 400px;
+  }
+
+  @include LAPTOP {
+    align-items: center;
+    max-width: 600px;
+    text-align: center;
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  @include MOBILE_MEDIUM {
+    max-width: 345px;
+  }
+}
+
+.title {
+  @include titleMain;
+  margin-bottom: 40px;
+
+  @include DESKTOP {
+    margin-bottom: 25px;
+  }
+}
+
+.subtitle {
+  @include subtitle;
+  margin-bottom: 24px;
+  line-height: $LH_SUBTITLE;
+}
+
+.link {
+  @include button();
+}
+
+.span {
+  @include typography($FS_TEXT_PRIMARY, $FW_EXTRABOLD, $C_BG);
+}
+
+.waveContainer {
+  @include waveContainer($bottom: 0);
+
+  .wave {
+    @include wave();
+    transform: rotate(180deg) scaleX(-1);
+  }
+}

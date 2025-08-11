@@ -1,0 +1,112 @@
+@import "@styles/index.scss";
+
+.ourServices {
+  width: 100%;
+
+  .titleContainer {
+    @include flex($justify: start, $gap: 40px, $align: center);
+
+    @include custom(1200px) {
+      gap: 30px;
+    }
+  }
+
+  .btn {
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .courseTitle {
+    @include burgerLink();
+
+    @include MOBILE_MEDIUM {
+      font-size: 18px;
+    }
+  }
+
+  .course {
+    @include flex($justify: space-between);
+    height: 86px;
+  }
+
+  .courseTitleContainer {
+    @include flex($gap: 20px);
+  }
+
+  .btnIcon {
+    transform: scaleX(-1);
+    width: 30px;
+    height: 30px;
+    color: $C_BG;
+  }
+
+  .crossIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btnAction {
+    padding-inline: 12px;
+  }
+
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+    transition: $TRANSITION;
+  }
+
+  .number {
+    display: inline-block;
+    position: relative;
+    @include burgerLink();
+    transition: $TRANSITION;
+    min-width: 18px;
+
+    @include MOBILE_MEDIUM {
+      font-size: 16px;
+    }
+
+    &.editMode {
+      font-weight: 900;
+    }
+
+    & .navigationVector {
+      width: 30px;
+      height: 12px;
+      top: auto;
+      bottom: -4px;
+      left: -10px;
+      transform: translateX(0);
+
+      @include MOBILE_MEDIUM {
+        width: 24px;
+      }
+    }
+  }
+
+  .buttons {
+    @include flex($gap: 15px);
+
+    @include TABLET {
+      gap: 5px;
+    }
+  }
+
+  .dragIcon {
+    cursor: grab;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}

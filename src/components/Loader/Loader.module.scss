@@ -1,0 +1,15 @@
+@import '@styles/index.scss';
+
+.loaderContainer {
+  height: 100vh;
+  @include flex($direction: column, $gap: 50px);
+  background: rgba($C_BUTTON, 0.5); 
+  color: $C_LOADER;
+  font-size: 4rem;
+  font-weight: bold;
+
+  .owl {
+    width: 300px;
+    max-height: 300px;
+  }
+}

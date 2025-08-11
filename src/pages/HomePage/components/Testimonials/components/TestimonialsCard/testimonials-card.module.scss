@@ -1,0 +1,65 @@
+@import '@styles/index.scss';
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  border-radius: 10px;
+  background-color: $C_BG;
+  box-shadow: $BS_BUTTON;
+  padding: 20px;
+  overflow: hidden;
+  @include flex();
+  @include testimonialsText;
+
+  & .stars {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 148px;
+    @include flex($gap: 5px);
+  }
+
+  & .filledStar {
+    fill: $C_BUTTON;
+  }
+
+  & .emptyStar {
+    fill: $C_BUTTON;
+  }
+
+  & .icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    fill: $C_PRICE;
+    transform: rotate(180deg);
+  }
+
+  & .waveContainer {
+    @include waveContainer($bottom: 0);
+    border-radius: 10px;
+
+    & .wave {
+      @include wave();
+      width: 1400px;
+      padding-right: 200px;
+      transform: rotate(180deg) scaleX(-1) translate(-450px, 0px);
+      border-radius: 10px;
+    }
+  }
+
+  & .description {
+    line-height: $LH_TEXT;
+  }
+
+  & .name {
+    @include typography($FS_FAQ, $FW_BLACK, $C_BG);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1001;
+  }
+}

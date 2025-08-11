@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+
+  background-image: url("@assets/images/body-background/owl_pattern.webp");
+  // background-image: url('@assets/images/body-background/owl_pattern_1.jpg');
+  // background-image: url('@assets/images/body-background/owl_pattern_2.jpg');
+  // background-image: url('@assets/images/body-background/owl_pattern_3_1.jpg');
+  // background-image: url('@assets/images/body-background/owl_pattern_4.jpg');
+  // background-image: url('@assets/images/body-background/owl_pattern_6.jpg');
+  font-family: $FONT_FAMILY;
+  @include typography();
+  background-attachment: fixed;
+  background-position: center;
+  // 0, 1
+  background-size: 960px;
+  // 2, 3
+  // background-size: 800px;
+  // 4
+  // background-size: 600px;
+  // 6
+  // background-size: 550px;
+  background-repeat: repeat;
+
+  &:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: -1;
+  }
+}
+
+// todo scrollbar
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: $C_PRIMARY;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $C_PRICE;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  position: relative;
+  overflow: hidden;
+}
+
+.containerVisible {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  position: relative;
+  overflow: visible;
+}
+
+.wrapper {
+  padding-inline: 45px;
+
+  @include TABLET {
+    padding-inline: 20px;
+  }
+}
+
+.adminPanelMargin {
+  margin-bottom: 50px;
+}

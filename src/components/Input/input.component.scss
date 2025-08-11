@@ -1,0 +1,114 @@
+@import "@styles/index.scss";
+
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  .label {
+    @include formLabel;
+
+    &--adminPanel {
+      @include burgerLink();
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .input-counter {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    @include navigation();
+  }
+
+  .input {
+    width: 100%;
+    height: 48px;
+    outline: none;
+    border: 1px solid transparent;
+    transition: $TRANSITION;
+
+    &--primary {
+      padding-left: 16px;
+      border-radius: 8px;
+      background-color: rgba($C_PRIMARY, 0.6);
+    }
+
+    &--adminPanel {
+      padding: 20px;
+      border-radius: 10px;
+      border-color: $C_PRICE;
+      @include inputTextAdminPanel();
+    }
+
+    &::placeholder {
+      @include inputPlaceholder;
+      color: $C_INPUT_PLACEHOLDER;
+    }
+
+    &:focus {
+      transition: none;
+      background-color: $C_BG;
+      border-color: $C_BUTTON;
+      border-width: 2px;
+    }
+
+    &--error {
+      border-color: $C_ERROR;
+      background-color: rgba($C_ERROR, 0.1);
+      color: $C_ERROR;
+    }
+
+    &--success {
+      border-color: $C_SUCCESS;
+      background-color: rgba($C_SUCCESS, 0.1);
+    }
+
+    &--disabled {
+      pointer-events: none;
+      border-color: rgba($C_INPUT_PLACEHOLDER, 0.5);
+      color: rgba($C_INPUT_PLACEHOLDER, 0.5);
+      background-color: rgba($C_INPUT_PLACEHOLDER, 0.1);
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(20px);
+    color: $C_ERROR;
+    @include typography($FS_TEXT_MOBILE, $FW_MEDIUM, $C_ERROR);
+    margin-top: 4px;
+  }
+
+  textarea.input {
+    resize: none;
+    height: 200px; 
+    overflow-y: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: $C_BUTTON transparent;
+
+  
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: $C_BUTTON;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+}
+
+

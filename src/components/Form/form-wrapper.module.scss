@@ -1,0 +1,25 @@
+@import '@styles/index.scss';
+
+.formWrapper {
+  width: 100%;
+  max-width: 690px;
+  height: 100%;
+  padding: 48px 42px;
+  border-radius: 20px;
+  box-shadow: $BS_TESTIMONIALS;
+  background-color: $C_BG;
+  @include flex($direction: column);
+
+  @include DESKTOP {
+    padding: 34px;
+  }
+
+  @include custom(600px) {
+    border-radius: 0;
+    padding: 34px 28px;
+  }
+
+  @include MOBILE_MEDIUM {
+    padding: 28px 12px;
+  }
+}

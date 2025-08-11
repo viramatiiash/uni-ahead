@@ -1,0 +1,121 @@
+@use 'sass:list';
+
+// Flex
+@mixin flex(
+  $direction: row,
+  $align: center,
+  $justify: center,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+// Grid
+@mixin grid($columns: auto-fit, $rows: auto,  $rowGap: 0px, $columnGap: 0px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, auto);
+  row-gap: $rowGap;
+  column-gap: $columnGap;
+}
+
+// todo для обрізання довгого тексту
+// Text cut
+@mixin textEllipsis($width: 100%) {
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Button
+@mixin button() {
+  display: inline-block;
+  width: fit-content;
+  height: 55px;
+  padding: 14px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: $C_BUTTON;
+  box-shadow: $BS_BUTTON;
+  color: $C_BG;
+  transition: $TRANSITION;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $C_PRICE;
+  }
+}
+
+// Alpha color
+@mixin alpha($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+// Wave container
+@mixin waveContainer($height: 100px, $top: auto, $bottom: auto) {
+  position: absolute;
+  bottom: $bottom;
+  top: $top;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: $height;
+  z-index: 1;
+}
+
+// Wave
+@mixin wave($fill: $C_PRIMARY) {
+    display: block;
+    width: 100%;
+    min-width: 1440px;
+    height: 100%;
+    fill: $fill;
+}
+
+// Transition
+@mixin transition($transitions...) {
+    @if list.length($transitions) == 0 {
+        $transitions: ('all 0.3s ease-in-out');
+    }
+    $unfoldedTransitions: ();
+    @each $transition in $transitions {
+        $unfoldedTransitions: list.append(
+            $unfoldedTransitions,
+            unfoldTransition($transition),
+            comma
+        );
+    }
+
+    transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition($transition) {
+    $property: all;
+    $duration: 0.3s;
+    $easing: ease-in-out;
+    $delay: 0s;
+    $defaultProperties: ($property, $duration, $easing, $delay);
+
+    $unfoldedTransition: ();
+
+    @for $i from 1 through list.length($defaultProperties) {
+        $p: null;
+        @if $i <= list.length($transition) {
+            $p: list.nth($transition, $i);
+        } @else {
+            $p: list.nth($defaultProperties, $i);
+        }
+        $unfoldedTransition: list.append($unfoldedTransition, $p);
+    }
+
+    @return $unfoldedTransition;
+}

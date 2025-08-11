@@ -1,0 +1,93 @@
+@use "@styles/index.scss" as *;
+
+.footer {
+  width: 100%;
+  height: 100%;
+  padding-block: 100px;
+  background-color: $C_PRIMARY;
+  @include flex($justify: center);
+
+  @include TABLET {
+    padding-block: 50px;
+  }
+
+  & .contentContainer {
+    width: 100%;
+    max-width: 1280px;
+    @include grid($columns: 3, $columnGap: 150px);
+    justify-items: start;
+    align-items: start;
+
+    @include DESKTOP {
+      column-gap: 60px;
+    }
+
+    @include LAPTOP {
+      max-width: 710px;
+      column-gap: 30px;
+    }
+
+    @include TABLET {
+      max-width: 470px;
+      @include grid($columns: 2, $rowGap: 30px, $columnGap: 20px);
+      grid-template-areas:
+        "logo logo"
+        "links navigation";
+
+      & .logoContainer {
+        grid-area: logo;
+      }
+
+      & .linksContainer {
+        grid-area: links;
+      }
+
+      & .navigationContainer {
+        grid-area: navigation;
+      }
+    }
+
+    @include MOBILE_MEDIUM {
+      @include grid($columns: 1, $rowGap: 40px, $columnGap: 0);
+      grid-template-areas:
+        "logo"
+        "navigation"
+        "links";
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  & .navigation {
+    @include flex($direction: column, $align: center);
+  }
+
+  & .privacyLinkContainer {
+    margin-bottom: 50px;
+  }
+
+  & .socialMediaContainer {
+    @include flex($direction: column, $align: start, $gap: 12px);
+    margin-bottom: 30px;
+  }
+
+  & .phoneLinkContainer {
+    margin-bottom: 12px;
+  }
+
+  & .logo {
+    width: 320px;
+    height: 100px;
+
+    @include LAPTOP {
+      width: 200px;
+      height: 60px;
+    }
+  }
+
+  & .link {
+    @include linkWithIcon;
+    padding: 10px 5px;
+    min-width: 125px;
+  }
+}

@@ -1,0 +1,25 @@
+@import "@styles/index.scss";
+
+.ourTeam {
+  background-color: $C_PRIMARY;
+  height: 100%;
+  width: 100%;
+  padding-block: 100px;
+
+  @include TABLET {
+    padding-block: 50px;
+  }
+}
+
+.blockTitleContainer {
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+  overflow: visible;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+.ourTeamVector {
+  top: -5px;
+}

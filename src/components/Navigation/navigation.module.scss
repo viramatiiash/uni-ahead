@@ -1,0 +1,39 @@
+@import '@styles/index.scss';
+
+.navLink {
+  @include flex($justify: center);
+  @include navigation();
+  padding: 10px 5px;
+  background-color: transparent;
+  border-radius: 20px;
+  transition: $TRANSITION;
+  min-width: 115px;
+
+  &:hover {
+    font-weight: $FW_BLACK !important;
+  }
+
+  &:active {
+    transition: scale 0.1s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  @include DESKTOP {
+    padding: 6px;
+  }
+
+  & .span {
+    display: block;
+    position: relative;
+    width: fit-content;
+  }
+
+  & .navigationVector {
+    width: 54px;
+    height: 16px;
+    top: auto;
+    bottom: -6px;
+    left: -15px;
+    transform: translateX(0);
+  }
+}

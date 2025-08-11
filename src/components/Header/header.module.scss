@@ -1,0 +1,52 @@
+@use "@styles/index.scss" as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  @include alpha($C_PRIMARY, 0.6);
+  @include flex($justify: space-between);
+
+  .navigationContainer,
+  .socialMediaContainer {
+    display: block;
+
+    @include LAPTOP {
+      display: none;
+    }
+  }
+
+  & .navigation {
+    @include flex($gap: 20px);
+
+    @include DESKTOP {
+      gap: 10px;
+    }
+  }
+
+  & .logo {
+    width: 160px;
+    height: 40px;
+
+    @include MOBILE_MEDIUM {
+      width: 130px;
+    }
+  }
+
+  .burgerButton {
+    display: none;
+
+    @include LAPTOP {
+      display: block;
+    }
+  }
+
+  .burger {
+    width: 26px;
+    height: 26px;
+  }
+}

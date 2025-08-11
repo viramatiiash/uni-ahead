@@ -1,0 +1,66 @@
+@import "@styles/index.scss";
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 432px;
+  max-width: 292px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & .gradient {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    @include flex($direction: column, $justify: end, $align: start);
+
+    & .name {
+      @include typography($FS_NUMBERS, $FW_BOLD, $C_MODAL);
+      margin-bottom: 5px;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & .position {
+      @include typography($FS_TEXT_ORDINARY, $FW_REGULAR, $C_BG);
+      margin-bottom: 5px;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & .divider {
+      width: 95px;
+      height: 3px;
+      background-color: $C_PRICE;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    & .description {
+      height: 72px;
+      width: 100%;
+      @include typography($FS_TEXT_ORDINARY, $FW_REGULAR, $C_BG, $LH_TEXT);
+      white-space: normal;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

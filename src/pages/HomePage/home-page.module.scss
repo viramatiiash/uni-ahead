@@ -1,0 +1,17 @@
+@import "@styles/index.scss";
+
+.homePage {
+  position: relative;
+
+  .pageBurger {
+    z-index: 1000;
+    position: fixed;
+    left: 40px;
+    top: 40px;
+
+    @include TABLET {
+      left: 20px;
+      top: 20px;
+    }
+  }
+}

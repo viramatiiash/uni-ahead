@@ -1,0 +1,39 @@
+@import "@styles/index.scss";
+
+.teamMemberContainer {
+  padding-block: 100px;
+
+  @include custom(1200px) {
+    padding-block: 50px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .teamMembers {
+    width: 100%;
+    max-width: 500px;
+    @include flex($direction: column, $align: start, $gap: 40px);
+  }
+
+  .teamMemberTitle {
+    @include bigTabText();
+    text-align: center;
+    margin-bottom: 100px;
+
+    @include LAPTOP {
+      font-size: 26px;
+      margin-bottom: 50px;
+    }
+
+    @include MOBILE_MEDIUM {
+      font-size: 22px;
+    }
+  }
+
+  .buttonContainer {
+    margin: 0 auto;
+    @include flex($gap: 15px);
+  }
+}

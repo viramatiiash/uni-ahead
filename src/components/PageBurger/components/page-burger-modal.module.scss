@@ -1,0 +1,120 @@
+@import "@styles/index.scss";
+
+.pageBurgerModal {
+  position: absolute;
+  width: 295px;
+  height: auto;
+  background-color: $C_PAGE_BURGER;
+  border-radius: 20px;
+  left: 55px;
+  top: -20px;
+  z-index: 99;
+  box-shadow: $BS_MEMBER_CARD;
+  padding-bottom: 5px;
+
+  @include MOBILE_MEDIUM {
+    width: 250px;
+  }
+
+  & .upperPart {
+    background-color: $C_MENU;
+    height: 55px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-left: 16px;
+    padding-right: 8px;
+    @include flex($justify: space-between);
+  }
+
+  & .closeButton {
+    width: 40px;
+    height: 40px;
+    padding: 11px;
+    background-color: $C_BG;
+    border-radius: 50%;
+    box-shadow: $BS_BURGER;
+    transition: $TRANSITION;
+
+    &:hover {
+      background-color: $C_BUTTON;
+    }
+  }
+
+  & .title {
+    @include titleModal();
+  }
+
+  & .linkContainer {
+    position: relative;
+    height: 53px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include MOBILE_MEDIUM {
+      height: 45px;
+    }
+
+    &:hover {
+      .icon {
+        transform: translateX(5px);
+      }
+
+      .link span {
+        transform: scale(1.1);
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .activeLink {
+    & span {
+      font-weight: $FW_BLACK;
+      transform: translateX(5px);
+    }
+    & .icon {
+      transform: translateX(5px);
+    }
+  }
+
+  & .link {
+    display: inline-block;
+    height: 100%;
+    @include flex($justify: space-between);
+    @include burgerLink();
+
+    & span {
+      transition: $TRANSITION;
+    }
+  }
+
+  & .divider {
+    width: 100%;
+    height: 3px;
+    background-color: $C_PRIMARY;
+    border-radius: 5px;
+  }
+
+  & .icon {
+    width: 15px;
+    height: 15px;
+    fill: $C_TEXT_SECONDARY;
+    transition: $TRANSITION;
+  }
+
+  & .phoneNumber {
+    border-bottom: 2px solid $C_DESCRIPTION;
+  }
+
+  & .warning {
+    position: relative;
+    width: 156px;
+  }
+
+  & .warningText {
+    @include warning();
+  }
+
+  & .highlighted {
+    font-weight: $FW_BLACK;
+  }
+}

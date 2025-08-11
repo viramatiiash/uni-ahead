@@ -1,0 +1,90 @@
+@import "@styles/index.scss";
+
+.title {
+  width: 100%;
+  max-width: 415px;
+  @include titleForm;
+  color: $C_TEXT_SECONDARY;
+  text-align: center;
+  margin-bottom: 25px;
+
+  @include DESKTOP {
+    margin-bottom: 20px;
+  }
+}
+
+.form {
+  width: 100%;
+
+  & .name {
+    @include flex($gap: 15px);
+
+    @include DESKTOP {
+      gap: 10px;
+    }
+    @include LAPTOP {
+      gap: 0;
+    }
+
+    @include TABLET {
+      flex-direction: column;
+    }
+  }
+
+  & .field {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .checkboxField {
+    position: relative;
+  }
+
+  & .fieldLast {
+    margin-bottom: 32px;
+  }
+
+  .label {
+    display: block;
+    @include formLabel;
+    margin-bottom: 15px;
+
+    @include DESKTOP {
+      margin-bottom: 10px;
+    }
+  }
+
+  .checkboxGrid {
+    width: 360px;
+    @include grid($columns: 2, $rowGap: 15px);
+    margin-bottom: 20px;
+  }
+
+  .button {
+    margin-top: 50px;
+    width: 100% !important;
+    box-shadow: none !important;
+
+    @include DESKTOP {
+      margin-top: 30px;
+    }
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(20px);
+  color: $C_ERROR;
+  @include typography($FS_TEXT_MOBILE, $FW_MEDIUM, $C_ERROR);
+  margin-top: 4px;
+}
+
+.tickIconContainer {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(0, 121, 0);
+  border-radius: 50%;
+  margin-bottom: 30px;
+}

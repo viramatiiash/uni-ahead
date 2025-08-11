@@ -1,0 +1,123 @@
+@import '@styles/index.scss';
+
+.contacts {
+  position: relative;
+  background-color: $C_BLUE;
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 200px;
+
+    @include TABLET {
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+
+  
+  @include TABLET {
+    padding-top: 50px;
+  }
+
+  & .blockTitleContainer {
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+    overflow: visible;
+    padding: 15px;
+    margin-bottom: 50px;
+  }
+
+  & .contactsContent {
+    @include flex($justify: space-between, $gap: 100px);
+
+    @include LAPTOP {
+      flex-direction: column;
+      gap: 60px;
+    }
+  }
+
+  & .contactDataContainer {
+    width: 40%;
+    @include flex($direction: column);
+
+    & .contactTitle {
+      @include bigTabText;
+      font-size: 28px;
+      margin-bottom: 50px;
+      text-align: center;
+
+      @include LAPTOP {
+        margin-bottom: 20px;
+      }
+    }
+
+    & .contactData {
+      @include flex($direction: column);
+    }
+
+    & .icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 6px;
+    }
+
+    & .iconPhone {
+      fill: $C_PRICE;
+      padding: 2px;
+    }
+
+    & .contactDataTitle {
+      @include contactUsTitle;
+      margin-bottom: 10px;
+    }
+
+    .dataContentContainer {
+      @include flex($direction: column);
+    }
+
+    & .data {
+      display: inline-block;
+      @include contactsText;
+      margin-bottom: 10px;
+      transition: $TRANSITION;
+
+      @include LAPTOP {
+        margin-bottom: 6px;
+      }
+
+      &:hover {
+        font-weight: $FW_BLACK;
+      }
+    }
+
+    & .divider {
+      width: 100%;
+      max-width: 215px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: $C_PRIMARY;
+      margin-top: 25px;
+      margin-bottom: 35px;
+
+      @include LAPTOP {
+        margin-top: 12px;
+        margin-bottom: 18px;
+      }
+    }
+
+    & .description {
+      @include warning;
+    }
+  }
+
+  & .waveContainer {
+    @include waveContainer($bottom: 0);
+
+    & .wave {
+      @include wave();
+      transform: rotate(180deg);
+    }
+  }
+}
+
+

@@ -1,0 +1,147 @@
+@import "@styles/index.scss";
+
+.span {
+  @include typography($FS_TEXT_PRIMARY, $FW_EXTRABOLD, $C_BG);
+}
+
+.button {
+  display: inline-block;
+  width: fit-content;
+  height: 48px;
+  padding-inline: 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: $BS_BUTTON;
+  color: $C_BG;
+  transition: $TRANSITION;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $C_BUTTON;
+
+    &:hover {
+      background-color: $C_PRICE;
+    }
+  }
+
+  &--success {
+    background-color: $C_SAVE;
+    color: $C_BG;
+
+    &:hover {
+      background-color: $C_SAVE_HOVER;
+    }
+
+    &:active {
+      transition: none;
+      background-color: $C_SAVE_ACTIVE;
+    }
+
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &--error,
+  &--error-small,
+  &--error-tiny {
+    background-color: $C_ERROR;
+    color: $C_BG;
+
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      background-color: $C_DESCRIPTION;
+    }
+
+    &:active {
+      transition: none;
+      background-color: $C_ERROR_ACTIVE;
+    }
+  }
+
+  &--error-small {
+    padding-inline: 14px;
+    box-shadow: none;
+  }
+
+  &--error-small .span {
+    @include buttonTextSmall();
+  }
+
+  &--error-tiny {
+    padding-inline: 10px;
+    height: 40px;
+    box-shadow: none;
+  }
+
+  &--error-tiny .span {
+    @include buttonTextSmall();
+  }
+
+  &--change {
+    background-color: $C_QUESTION;
+    color: $C_BG;
+
+    &:hover {
+      background-color: $C_CHANGE_HOVER;
+    }
+
+    &:active {
+      transition: none;
+      background-color: $C_CHANGE_ACTIVE;
+    }
+
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &--cancel {
+    background-color: $C_INPUT_PLACEHOLDER;
+    color: $C_BG;
+
+    &:hover {
+      background-color: $C_TEXT_SECONDARY;
+    }
+
+    &:active {
+      transition: none;
+      background-color: $C_TEXT_PRIMARY;
+    }
+
+    @include custom(1200px) {
+      height: 44px;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &--burger {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  &:disabled, &--disabled {
+    background-color: $C_DISABLED;
+    cursor: not-allowed;
+  }
+}

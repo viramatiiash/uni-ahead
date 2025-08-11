@@ -1,0 +1,137 @@
+@import '@styles/index.scss';
+
+.faqContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 170px;
+  padding-bottom: 170px;
+  @include flex($direction: column);
+  background-color: $C_BG;
+
+  .blockTitleContainer {
+    position: relative;
+    width: fit-content;
+    overflow: visible;
+    padding: 15px;
+    margin-bottom: 65px;
+
+    .FAQVector {
+      top: -5px;
+    }
+  }
+
+  & .questionIcon_1,
+  .questionIcon_2,
+  .questionIcon_3 {
+    position: absolute;
+  }
+
+  .questionIcon_1 {
+    top: 75px;
+    right: 32px;
+    width: 217px;
+    height: 217px;
+    stroke: $C_PRIMARY;
+    transform: rotate(17deg);
+
+    @include TABLET {
+      width: 160px;
+      height: 160px;
+      right: -14px;
+    }
+
+    @include custom(650px) {
+      width: 110px;
+      height: 110px;
+      top: 70px;
+    }
+
+    @include MOBILE_MEDIUM {
+      width: 90px;
+      height: 90px;
+      top: 80px;
+      right: 10px;
+    }
+  }
+
+  .questionIcon_2 {
+    top: 570px;
+    left: 6px;
+    width: 150px;
+    height: 150px;
+    fill: $C_QUESTION;
+    transform: rotate(-26deg);
+
+    @include DESKTOP {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include custom(1100px) {
+      top: 170px;
+    }
+
+    @include custom(630px) {
+      width: 60px;
+      height: 60px;
+      top: 220px;
+    }
+  }
+
+  .questionIcon_3 {
+    bottom: 127px;
+    right: 22px;
+    width: 200px;
+    height: 200px;
+    fill: $C_BUTTON;
+    transform: rotate(-6deg);
+
+    @include DESKTOP {
+      width: 160px;
+      height: 160px;
+      right: 0;
+      bottom: 80px;
+    }
+
+    @include TABLET {
+      width: 120px;
+      height: 120px;
+      right: 50px;
+      bottom: 100px;
+    }
+
+    @include MOBILE_MEDIUM {
+      right: -10px;
+    }
+  }
+
+  .accordionContainer {
+    max-width: 80%;
+
+    @include LAPTOP {
+      max-width: 90%;
+    }
+
+    @include TABLET {
+      max-width: 96%;
+    }
+  }
+
+  & .waveContainer {
+    @include waveContainer($top: 0);
+
+    & .wave {
+      @include wave();
+    }
+  }
+
+  & .waveContainerBottom {
+    @include waveContainer($bottom: 0);
+
+    & .waveBottom {
+      @include wave($fill: rgba($C_SECONDARY, 0.4));
+      transform: rotate(180deg) scale(1);
+    }
+  }
+}

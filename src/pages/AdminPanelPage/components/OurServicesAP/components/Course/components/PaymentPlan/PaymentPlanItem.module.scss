@@ -1,0 +1,119 @@
+@import "@styles/index.scss";
+
+.planContainer {
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: $C_PLAN_BG;
+  border-radius: 10px;
+  padding-inline: 20px 10px;
+  transition: $TRANSITION;
+  @include flex($justify: space-between);
+
+  &:hover {
+    background-color: $C_PLAN_BG_HOVER;
+  }
+}
+
+.expandContainer {
+  @include flex();
+}
+
+.planNumber {
+  @include burgerLink();
+  width: 100%;
+  padding: 20px;
+  border-radius: inherit;
+
+  @include TABLET {
+    font-size: 18px;
+  }
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: $TRANSITION;
+}
+
+.contentOpen {
+  max-height: 3000px;
+  overflow: clip;
+  overflow-clip-margin: 10px;
+}
+
+.expand {
+  width: 20px;
+  height: 20px;
+  color: $C_TEXT_PRIMARY;
+  transition: $TRANSITION;
+  cursor: pointer;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+
+.planTitle {
+  max-width: 500px;
+}
+
+.plans {
+  width: 100%;
+  max-width: 500px;
+  @include flex($direction: column, $gap: 20px, $align: start);
+}
+
+.titleContainer {
+  @include flex($justify: space-between);
+  margin-bottom: 30px;
+}
+
+.buttonWrapper {
+  position: relative;
+  z-index: 2 !important;
+  overflow: visible !important;
+}
+
+.accordion {
+  padding-inline: 15px;
+
+  @include MOBILE_MEDIUM {
+    padding-inline: 0;
+  }
+
+  & .titleContainer h2 {
+    @include accordionQuestion();
+    font-weight: $FW_EXTRABOLD;
+  }
+}
+
+.accordionContent {
+  max-width: 500px;
+  @include flex($direction: column, $align: start, $gap: 40px);
+}
+
+.accordionItemContainer {
+  background-color: $C_PAGE_BURGER;
+  height: 58px;
+
+  &:hover {
+    background-color: $C_MENU;
+  }
+}
+
+.btnIcon {
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+  color: $C_BG;
+}
+
+.crossIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.btnAction {
+  padding-inline: 12px;
+}

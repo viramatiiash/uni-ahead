@@ -1,0 +1,51 @@
+@import "@styles/index";
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $C_PRIMARY;
+  z-index: 1500;
+  padding: 20px;
+  @include flex($direction: column);
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  pointer-events: none;
+
+  &.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .closeButton {
+    width: 26px;
+    height: 26px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 52px;
+    cursor: pointer;
+
+    @include TABLET {
+      right: 26px;
+    }
+  }
+
+  .closeIcon {
+    color: $C_TEXT_SECONDARY;
+  }
+
+  .link {
+    padding-block: 12px;
+  }
+
+  .navigation {
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+}

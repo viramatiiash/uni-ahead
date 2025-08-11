@@ -1,0 +1,42 @@
+@import "@styles/index.scss";
+
+.faqItemFormContainer {
+  .form {
+    width: 100%;
+  }
+
+  .faqItems {
+    width: 100%;
+    max-width: 500px;
+    @include flex($direction: column, $align: start, $gap: 40px);
+  }
+
+  .textEditorWrapper {
+    width: 100%;
+  }
+
+  .label {
+    @include burgerLink;
+    margin-bottom: 10px;
+  }
+
+  .faqItemTitle {
+    @include bigTabText();
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include LAPTOP {
+      font-size: 26px;
+      margin-bottom: 50px;
+    }
+
+    @include MOBILE_MEDIUM {
+      font-size: 22px;
+    }
+  }
+
+  .buttonsContainer {
+    margin: 0 auto;
+    @include flex($gap: 15px);
+  }
+}

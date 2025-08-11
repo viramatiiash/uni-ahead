@@ -1,0 +1,7 @@
+@use '@styles/index.scss' as *;
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $C_PRIMARY;
+}

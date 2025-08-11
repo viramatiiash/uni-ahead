@@ -1,0 +1,54 @@
+@import "@styles/index.scss";
+
+.section {
+  width: 100%;
+  max-width: 1290px;
+  position: relative;
+  margin: 0 auto;
+  height: 540px;
+  @include flex();
+  padding-left: 20px;
+
+  @include MOBILE_MEDIUM {
+    padding-inline: 20px;
+  }
+
+  .carousel {
+    --slide-size: 292px;
+
+    --slide-spacing-mob: 26px;
+    --slide-spacing-tab: 14px;
+    --slide-spacing-lap: 15px;
+    --slide-spacing-desc: 24px;
+    margin: 0 auto;
+  }
+
+  .viewport {
+    height: 440px;
+  }
+
+  .slide {
+    height: fit-content;
+    box-shadow: $BS_MEMBER_CARD;
+    border-radius: 10px;
+    flex: 0 0 var(--slide-size) !important;
+    margin-left: var(--slide-spacing-desc) !important;
+    cursor: grab;
+
+    @include DESKTOP {
+      margin-left: var(--slide-spacing-desc) !important;
+    }
+
+    @include LAPTOP {
+      margin-left: var(--slide-spacing-lap) !important;
+    }
+
+    @include TABLET {
+      margin-left: var(--slide-spacing-tab) !important;
+    }
+
+    @include MOBILE_MEDIUM {
+      margin-left: var(--slide-spacing-mob) !important;
+    }
+  }
+}

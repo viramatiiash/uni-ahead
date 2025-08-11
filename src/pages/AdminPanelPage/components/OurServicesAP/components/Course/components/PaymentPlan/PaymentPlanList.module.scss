@@ -1,0 +1,6 @@
+@import "@styles/index.scss";
+
+.titleContainer {
+  margin-bottom: 30px;
+  @include flex($justify: space-between);
+}

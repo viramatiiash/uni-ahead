@@ -1,0 +1,9 @@
+@import '@styles/index.scss';
+
+.logo {
+  @include transition(transform 0.2s);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,31 @@
+@import '@styles/index.scss';
+
+.link {
+  border-radius: 50%;
+  transition: $TRANSITION;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 40px;
+  bottom: 100px;
+  z-index: 99;
+  padding: 8px;
+  background-color: $C_SECONDARY;
+  opacity: 0.6;
+  border: 1px solid transparent;
+
+  @include TABLET {
+    right: 20px;
+    bottom: 80px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: $C_MODAL;
+  }
+
+  &:active {
+    transition: none;
+    background-color: darken($C_MODAL, 20%);
+  }
+}

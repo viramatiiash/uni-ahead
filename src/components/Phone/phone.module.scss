@@ -1,0 +1,54 @@
+@import '@styles/index.scss';
+
+.modalWrapper {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &.closed {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+  }
+}
+
+.phoneModalContainer {
+  position: relative;
+  border-radius: 50%;
+  transition: $TRANSITION;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 99;
+  padding: 10px;
+  background-color: $C_SECONDARY;
+  opacity: 0.6;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  @include TABLET {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: $C_MODAL;
+  }
+
+  &:active, &.active {
+    opacity: 1;
+    transition: none;
+    background-color: darken($C_MODAL, 20%);
+  }
+}

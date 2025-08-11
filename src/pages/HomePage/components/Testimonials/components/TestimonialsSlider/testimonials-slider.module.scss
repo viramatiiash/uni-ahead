@@ -1,0 +1,98 @@
+@import "@styles/index.scss";
+
+.testimonialsSlider {
+  position: relative;
+  margin: 0 auto;
+  height: 420px;
+  @include flex($align: start);
+  overflow: visible;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  @include flex();
+
+  @include DESKTOP {
+    padding-left: 20px;
+  }
+
+  @include MOBILE_MEDIUM {
+    padding-inline: 14px;
+  }
+}
+
+.carousel {
+  --slide-size: 404px;
+  --slide-spacing: 20px;
+
+  --slide-size-desc: 380px;
+  --slide-size-mob: 100%;
+  margin: 0 auto;
+
+  @include MOBILE_MEDIUM {
+    max-width: 400px;
+  }
+}
+
+.viewport {
+  height: 286px;
+}
+
+.slide {
+  flex: 0 0 var(--slide-size) !important;
+  height: fit-content;
+  box-shadow: $BS_MEMBER_CARD;
+  border-radius: 10px;
+  cursor: grab;
+
+  margin-left: var(--slide-spacing);
+
+  @include DESKTOP {
+    flex: 0 0 var(--slide-size-desc) !important;
+  }
+
+  @include MOBILE_MEDIUM {
+    flex: 0 0 var(--slide-size-mob) !important;
+  }
+
+  &:first-of-type {
+    margin-left: 20px !important;
+
+    @include MOBILE_MEDIUM {
+      margin-left: 0 !important;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 20px !important;
+
+    @include DESKTOP {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.buttonPrev {
+  left: 5px !important;
+  display: block;
+
+  @include DESKTOP {
+    left: -15px !important;
+  }
+
+  @include MOBILE_MEDIUM {
+    display: none;
+  }
+}
+
+.buttonNext {
+  right: 5px !important;
+  display: block;
+
+  @include MOBILE_MEDIUM {
+    display: none;
+  }
+}

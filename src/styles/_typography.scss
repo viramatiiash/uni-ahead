@@ -1,0 +1,328 @@
+// Google Font Import
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap");
+@import "./variables";
+
+// Font Family
+$FONT_FAMILY: "Nunito", serif;
+
+// Font sizes
+$FS_TITLE_MAIN: 46px;
+$FS_PRICE: 40px;
+$FS_TITLE_BLOCK: 36px;
+$FS_TABS_PRIMARY: 30px;
+$FS_TEXT_SECONDARY: 28px;
+$FS_TABS_SECONDARY: 26px;
+$FS_NUMBERS: 24px;
+$FS_FAQ: 22px;
+$FS_TEXT_PRIMARY: 20px;
+$FS_DESCRIPTION: 18px;
+$FS_TEXT_ORDINARY: 16px;
+$FS_TEXT_MOBILE: 14px;
+$FS_TEXT_TINY: 12px;
+
+// Font weights
+$FW_REGULAR: 400;
+$FW_MEDIUM: 500;
+$FW_SEMIBOLD: 600;
+$FW_BOLD: 700;
+$FW_EXTRABOLD: 800;
+$FW_BLACK: 900;
+
+// Line Heights
+$LH_TEXT: 24px;
+$LH_SUBTITLE: 28px;
+
+// typography mixin
+@mixin typography(
+  $size: $FS_TEXT_ORDINARY,
+  $weight: $FW_REGULAR,
+  $color: $C_TEXT_SECONDARY,
+  $lineHeight: auto
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $lineHeight;
+}
+
+@mixin titleMain {
+  font-size: 46px;
+  font-weight: 800;
+  color: $C_TEXT_SECONDARY;
+
+  @include DESKTOP {
+    font-size: 36px;
+  }
+
+  @include MOBILE_MEDIUM {
+    font-size: 28px;
+  }
+}
+
+@mixin titleBlock {
+  font-size: 36px;
+  font-weight: 700;
+  color: $C_TEXT_SECONDARY;
+
+  @include WIDESCREEN {
+    font-size: 32px;
+  }
+
+  @include DESKTOP {
+    font-size: 28px;
+  }
+
+  @include LAPTOP {
+    font-size: 24px;
+  }
+
+  @include MOBILE_MEDIUM {
+    font-size: 22px;
+  }
+}
+
+@mixin titleTeamMember {
+  font-size: 24px;
+  font-weight: 700;
+  color: $C_MODAL;
+}
+
+@mixin titleForm {
+  font-size: 22px;
+  font-weight: 700;
+  color: $C_BG;
+}
+
+@mixin titleModal {
+  font-size: 20px;
+  font-weight: 900;
+  color: $C_TEXT_SECONDARY;
+
+  @include MOBILE_MEDIUM {
+    font-size: 18px;
+  }
+}
+
+@mixin subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: $C_TEXT_SECONDARY;
+  line-height: $LH_SUBTITLE;
+
+  @include LAPTOP {
+    font-size: 16px;
+  }
+}
+
+@mixin text {
+  font-size: 20px;
+  font-weight: 400;
+  color: $C_TEXT_PRIMARY;
+
+  @include DESKTOP {
+    font-size: 16px;
+  }
+}
+
+@mixin linkWithIcon {
+  font-size: 20px;
+  font-weight: 500;
+  color: $C_TEXT_PRIMARY;
+
+  @include TABLET {
+    font-size: 18px;
+  }
+}
+
+@mixin buttonText {
+  font-size: 20px;
+  font-weight: 800;
+  color: $C_BG;
+}
+
+@mixin buttonTextSmall {
+  font-size: 16px;
+  font-weight: 800;
+  color: $C_BG;
+}
+
+@mixin videoText {
+  font-size: 28px;
+  font-weight: 700;
+  color: $C_TEXT_SECONDARY;
+
+  @include DESKTOP {
+    font-size: 22px;
+  }
+
+  @include custom(1090px) {
+    font-size: 20px;
+  }
+
+  @include LAPTOP {
+    font-size: 18px;
+  }
+
+  @include MOBILE_MEDIUM {
+    font-size: 16px;
+  }
+}
+
+@mixin bigTabText {
+  font-size: 30px;
+  font-weight: 700;
+  color: $C_TEXT_SECONDARY;
+
+  @include LAPTOP {
+    font-size: 22px;
+  }
+
+  @include TABLET {
+    font-size: 18px;
+  }
+}
+
+@mixin smallTabText {
+  font-size: 26px;
+  font-weight: 500;
+  color: $C_TEXT_SECONDARY;
+
+  @include LAPTOP {
+    font-size: 16px;
+  }
+}
+
+@mixin teamMemberText {
+  font-size: 16px;
+  font-weight: 400;
+  color: $C_BG;
+}
+
+@mixin accordionQuestion {
+  font-size: 22px;
+  font-weight: 600;
+  color: $C_TEXT_SECONDARY;
+
+  @include LAPTOP {
+    font-size: 18px;
+  }
+
+  @include MOBILE_MEDIUM {
+    font-size: 16px;
+  }
+}
+
+@mixin accordionAnswer {
+  font-size: 18px;
+  font-weight: 600;
+  color: $C_TEXT_SECONDARY;
+
+  @include LAPTOP {
+    font-size: 16px;
+  }
+
+  @include MOBILE_MEDIUM {
+    font-size: 14px;
+  }
+}
+
+@mixin checkboxLabel {
+  font-size: 18px;
+  font-weight: 500;
+
+  @include MOBILE_MEDIUM {
+    font-size: 16px;
+  }
+}
+
+@mixin navigation {
+  font-size: 18px;
+  font-weight: 700;
+  color: $C_TEXT_PRIMARY;
+}
+
+@mixin formLabel {
+  font-size: 18px;
+  font-weight: 700;
+  color: $C_TEXT_SECONDARY;
+
+  @include MOBILE_MEDIUM {
+    font-size: 16px;
+  }
+}
+
+@mixin burgerLink {
+  font-size: 20px;
+  font-weight: 700;
+  color: $C_TEXT_SECONDARY;
+
+  @include MOBILE_MEDIUM {
+    font-size: 16px;
+  }
+}
+
+@mixin contactsText {
+  font-size: 20px;
+  font-weight: 500;
+  color: $C_TEXT_SECONDARY;
+
+
+  @include LAPTOP {
+    font-size: 18px;
+  }
+}
+
+@mixin price {
+  font-size: 40px;
+  font-weight: 800;
+  color: $C_PRICE;
+
+  @include LAPTOP {
+    font-size: 32px;
+  }
+
+  @include TABLET {
+    font-size: 24px;
+  }
+}
+
+@mixin inputPlaceholder {
+  font-size: 18px;
+  font-weight: 400;
+  color: $C_INPUT_PLACEHOLDER;
+
+  @include TABLET {
+    font-size: 16px;
+  }
+}
+
+@mixin testimonialsText {
+  font-size: 16px;
+  font-weight: 400;
+
+  @include MOBILE {
+    font-size: 14px;
+  }
+}
+
+@mixin inputTextAdminPanel {
+  font-size: 16px;
+  font-weight: 500;
+  color: $C_TEXT_SECONDARY;
+}
+
+@mixin contactUsTitle {
+  font-size: 22px;
+  font-weight: 900;
+  color: $C_TEXT_SECONDARY;
+
+  @include LAPTOP {
+    font-size: 18px;
+  }
+}
+
+@mixin warning {
+  font-size: 14px;
+  font-weight: 600;
+  color: $C_DESCRIPTION;
+}

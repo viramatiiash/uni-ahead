@@ -1,0 +1,138 @@
+@use "@styles/index" as *;
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.viewport {
+  overflow: clip;
+  overflow-clip-margin: 16px;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  backface-visibility: hidden;
+  touch-action: pan-y pinch-zoom;
+  align-items: flex-start;
+  overflow: visible;
+
+  @include transition(height 0.3s);
+}
+
+.slide {
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: var(--slide-size, 100%);
+
+
+  @include MOBILE {
+    flex-basis: var(--slide-size-mob, 100%);
+    margin-left: var(--slide-spacing-mob);
+  }
+
+  @include TABLET {
+    flex-basis: var(--slide-size-tab, 100%);
+    margin-left: var(--slide-spacing-tab);
+  }
+
+  @include LAPTOP {
+    flex-basis: var(--slide-size-lap, 100%);
+    margin-left: var(--slide-spacing-lap);
+  }
+
+  @include DESKTOP {
+    flex-basis: var(--slide-size-desc, 100%);
+    margin-left: var(--slide-spacing-desc);
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-inline: auto;
+  height: 16px;
+  margin-top: 16px;
+
+  @include TABLET {
+    height: 24px;
+    margin-top: 24px;
+  }
+}
+
+.dot {
+  --bg-color: #{rgba($C_TEXT_PRIMARY, 0.2)};
+  --bg-active-color: #{rgba($C_TEXT_PRIMARY, 0.6)};
+
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--bg-color);
+
+  &.active {
+    scale: 1.2;
+    background-color: var(--bg-active-color);
+  }
+
+  @include TABLET {
+    width: 16px;
+    height: 16px;
+
+    &.active {
+      scale: 1.25;
+    }
+  }
+}
+
+.control {
+  width: 36px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  background: rgba($C_TEXT_PRIMARY, 0.75);
+  border: 0;
+  padding: 18px 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.controlPrev {
+  left: -60px;
+
+  @include WIDESCREEN {
+    left: -15px;
+  }
+}
+
+.controlNext {
+  right: -60px;
+
+  @include WIDESCREEN {
+    right: -15px;
+  }
+
+  @include custom(1350px) {
+    right: 5px;
+  }
+
+  @include MOBILE_MEDIUM {
+    right: -15px;
+  }
+}
+
+.arrowIcon {
+  fill: $C_BG;
+}

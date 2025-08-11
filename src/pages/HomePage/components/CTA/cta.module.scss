@@ -1,0 +1,116 @@
+@import "@styles/index.scss";
+
+.ctaContainer {
+  position: relative;
+  width: 100%;
+  height: 850px;
+  background-image: url("@assets/images/university/books.webp");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flex();
+
+  @include LAPTOP {
+    background-position: 50% 0;
+  }
+
+  @include TABLET {
+    background-image: url("@assets/images/university/books-mobile.webp");
+    background-position: 60% 40px;
+    align-items: start;
+    padding-top: 180px;
+    background-attachment: scroll;
+  }
+
+  @include MOBILE_MEDIUM {
+    background-position: 56% 40px;
+  }
+
+  & .textContainer {
+    width: 550px;
+    @include flex($direction: column);
+    text-align: center;
+
+    & .ctaTitle {
+      @include titleBlock;
+      margin-bottom: 90px;
+
+      @include WIDESCREEN {
+        font-size: 36px;
+      }
+
+      @include DESKTOP {
+        margin-bottom: 50px;
+      }
+
+      @include LAPTOP {
+        font-size: 30px;
+        width: 450px;
+      }
+
+      @include MOBILE_MEDIUM {
+        font-size: 24px;
+        margin-bottom: 36px;
+      }
+
+      & .span {
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+        overflow: visible;
+        color: $C_BG;
+        text-transform: uppercase;
+
+        .ctaVector {
+          top: -5px;
+        }
+      }
+    }
+
+    & .ctaText {
+      @include titleBlock;
+      color: $C_BG;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    @include MOBILE_MEDIUM {
+      margin-bottom: 36px;
+    }
+
+    & .link {
+      @include button();
+
+      & .linkSpan {
+        @include typography($FS_TEXT_PRIMARY, $FW_EXTRABOLD, $C_BG);
+      }
+    }
+  }
+
+  & .emptyContainer {
+    display: block;
+    width: 50%;
+
+    @include TABLET {
+      display: none;
+    }
+  }
+
+  & .waveContainer {
+    @include waveContainer($top: 0);
+
+    & .wave {
+      @include wave();
+    }
+  }
+
+  & .waveContainerBottom {
+    @include waveContainer($bottom: 0);
+
+    & .waveBottom {
+      @include wave();
+      transform: rotate(180deg);
+    }
+  }
+}
